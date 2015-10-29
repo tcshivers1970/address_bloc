@@ -41,4 +41,20 @@ RSpec.describe AddressBook do
     end
    end
    
+   describe "remove_entry" do
+    it"removes entries not registered in the directory or address book"
+     book = AddressBook.new
+     book.add_entry("Kevin Spacey", "123.456.7890", "kspacey@lovelace.com")
+    
+     name = "Ada Lovelace"
+     phone_number = "010.012.1815"
+     email = "augusta.king@lovelace.com"
+    book.add_entry(name, phone_number, email)
+    
+    expect(book.entries.size).to eq(2)
+    book.remove_entry(name, phone_number, email)
+    expext(book.entries.size).to eq(1)
+    expect(book.entries.first.name).to eq("Kevin Spacey")
+   end
+   
  end
