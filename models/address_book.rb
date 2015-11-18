@@ -41,4 +41,9 @@ class AddressBook
     end
     @entries.delete(delete_entry)
   end
+  
+  def binary_search(name)
+   return nil
+  end
+  
 end
